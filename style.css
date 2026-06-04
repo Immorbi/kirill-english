@@ -115,7 +115,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 2.5rem;
-  transition: background var(--transition), backdrop-filter var(--transition);
+  transition: background var(--transition), backdrop-filter var(--transition), padding var(--transition);
 }
 .nav.scrolled {
   background: rgba(15,28,46,0.95);
