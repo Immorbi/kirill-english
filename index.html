@@ -231,7 +231,11 @@
           <li>Ответы на все вопросы</li>
         </ul>
       </div>
-      <form class="booking-form" id="trialForm" onsubmit="handleForm(event, 'trial')">
+      <form class="booking-form" id="trialForm" action="https://formsubmit.co/kirilldanilov060@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Новая заявка на пробный урок" />
+        <input type="hidden" name="_next" value="https://immorbi.github.io/kirill-english/thanks.html" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
         <h3>Запись на пробный урок</h3>
         <div class="form-group">
           <label for="trial-name">Ваше имя</label>
@@ -259,7 +263,7 @@
           <textarea id="trial-goal" name="goal" rows="3" placeholder="Расскажите, зачем вам английский..."></textarea>
         </div>
         <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
-        <p class="form-note">Я свяжусь с вами в течение 24 часов и согласуем удобное время</p>
+        <p class="form-note">Кирилл свяжется с вами в течение 24 часов</p>
         <p class="form-consent">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html" target="_blank">обработку персональных данных</a></p>
       </form>
     </div>
