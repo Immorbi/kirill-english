@@ -1,20 +1,20 @@
 /* ── Variables ── */
 :root {
-  --navy: #0f1c2e;
-  --navy-mid: #1a2d45;
-  --navy-light: #243d5c;
-  --gold: #6bbde8;
-  --gold-light: #92d0f5;
-  --cream: #fdf6e0;
-  --cream-dark: #f7edcc;
-  --text: #2a2a2a;
-  --text-muted: #6b6b6b;
+  --navy: #0f172a;
+  --navy-mid: #1e293b;
+  --navy-light: #334155;
+  --gold: #6366f1;
+  --gold-light: #818cf8;
+  --cream: #f8fafc;
+  --cream-dark: #f1f5f9;
+  --text: #1e293b;
+  --text-muted: #64748b;
   --white: #ffffff;
 
   --font-display: 'Libre Baskerville', Georgia, serif;
   --font-body: 'Nunito Sans', sans-serif;
 
-  --radius: 4px;
+  --radius: 6px;
   --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -187,28 +187,16 @@ ul { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 65% 50%, var(--navy-mid) 0%, var(--navy) 100%);
+    radial-gradient(ellipse 80% 70% at 60% 40%, #1e2d5a 0%, #0f172a 70%);
   z-index: 0;
 }
 .hero__bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 60px,
-      rgba(255,255,255,0.015) 60px,
-      rgba(255,255,255,0.015) 61px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 60px,
-      rgba(255,255,255,0.015) 60px,
-      rgba(255,255,255,0.015) 61px
-    );
+  background:
+    radial-gradient(ellipse 40% 40% at 75% 20%, rgba(99,102,241,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 30% at 20% 80%, rgba(129,140,248,0.12) 0%, transparent 60%);
 }
 .hero__bg::after {
   content: 'ENGLISH';
@@ -597,7 +585,7 @@ ul { list-style: none; }
 /* Trial accent card */
 .price__card--trial {
   border: 2px solid var(--gold);
-  background: linear-gradient(135deg, #fffdf7 0%, #fdf6e3 100%);
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
   position: relative;
   overflow: hidden;
   animation: trialWiggle 3.5s ease-in-out 2s infinite;
@@ -615,7 +603,7 @@ ul { list-style: none; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), #a5b4fc);
 }
 .price__card--trial .price__amount {
   color: var(--navy);
@@ -626,7 +614,7 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .price__tag {
   font-size: 0.72rem;
