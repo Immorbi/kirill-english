@@ -648,7 +648,7 @@ ul { list-style: none; }
    CREDENTIALS
 ───────────────────────────── */
 .credentials {
-  padding: 7rem 0;
+  padding: 5rem 0;
   background: var(--cream);
 }
 .credentials__grid {
@@ -658,38 +658,38 @@ ul { list-style: none; }
 }
 .credential-item {
   display: flex;
-  gap: 1.8rem;
+  gap: 1.2rem;
   align-items: flex-start;
-  padding: 2.5rem;
+  padding: 1.8rem 2rem;
   border: 1px solid var(--cream-dark);
   transition: background var(--transition);
 }
 .credential-item:hover { background: var(--cream-dark); }
 .credential-item__year {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--gold);
   flex-shrink: 0;
-  width: 3.5rem;
-  line-height: 1;
-  padding-top: 0.15rem;
+  width: 3.2rem;
+  line-height: 1.1;
+  padding-top: 0.1rem;
 }
 .credential-item h4 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--navy);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 .credential-item p {
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.55;
   color: var(--text-muted);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 .credential-item__note {
-  font-size: 0.8rem !important;
+  font-size: 0.78rem !important;
   color: var(--gold) !important;
   font-style: italic;
 }
