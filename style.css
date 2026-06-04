@@ -133,6 +133,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   gap: 2rem;
+  margin-left: auto;
 }
 .nav__links a {
   font-size: 0.82rem;
