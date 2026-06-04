@@ -81,6 +81,25 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 revealEls.forEach(el => observer.observe(el));
 
+// Contact method tabs
+document.querySelectorAll('.contact-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.contact-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const targetId = tab.dataset.target;
+    ['contact-tg', 'contact-vk', 'contact-phone'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const isActive = id === targetId;
+        el.style.display = isActive ? 'block' : 'none';
+        el.disabled = !isActive;
+        if (isActive) el.required = true;
+        else el.required = false;
+      }
+    });
+  });
+});
+
 // Form handling
 function handleForm(e, type) {
   e.preventDefault();

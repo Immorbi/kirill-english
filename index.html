@@ -242,8 +242,15 @@
           <input type="text" id="trial-name" name="name" required placeholder="Иван Иванов" />
         </div>
         <div class="form-group">
-          <label for="trial-phone">Телефон или Telegram</label>
-          <input type="text" id="trial-phone" name="contact" required placeholder="+7 900 000-00-00 или @username" />
+          <label>Способ связи</label>
+          <div class="contact-tabs">
+            <button type="button" class="contact-tab active" data-target="contact-tg">Telegram</button>
+            <button type="button" class="contact-tab" data-target="contact-vk">ВКонтакте</button>
+            <button type="button" class="contact-tab" data-target="contact-phone">Телефон</button>
+          </div>
+          <input type="text" id="contact-tg" name="contact" required placeholder="@username" />
+          <input type="text" id="contact-vk" name="contact" placeholder="vk.com/username" style="display:none" disabled />
+          <input type="text" id="contact-phone" name="contact" placeholder="+7 900 000-00-00" style="display:none" disabled />
         </div>
         <div class="form-group">
           <label for="trial-level">Примерный уровень</label>
@@ -274,7 +281,7 @@
     <div class="container footer__inner">
       <div class="footer__name">Кирилл Д.</div>
       <p class="footer__sub">к.ф.н., доцент · Преподаватель английского языка</p>
-      <p class="footer__contact">Онлайн по Skype · от 650 ₽/урок</p>
+      <p class="footer__contact">Онлайн по Skype · от 800 ₽/урок</p>
     </div>
   </footer>
 
