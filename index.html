@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кирилл Д. — Преподаватель английского языка</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <nav class="nav">
+      <div class="nav__logo">КД</div>
+      <ul class="nav__links">
+        <li><a href="#about">О преподавателе</a></li>
+        <li><a href="#courses">Направления</a></li>
+        <li><a href="#credentials">Документы</a></li>
+        <li><a href="#booking" class="nav__cta">Записаться</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="hero__content">
+      <div class="hero__photo-wrap">
+        <div class="hero__photo-ring"></div>
+        <img class="hero__photo" src="photo.jpg" alt="Кирилл Д." onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+        <div class="hero__photo-placeholder">КД</div>
+      </div>
+      <div class="hero__text">
+        <p class="hero__eyebrow">Преподаватель английского языка</p>
+        <h1 class="hero__name">Кирилл<br/><em>Владимирович</em></h1>
+        <p class="hero__credentials-line">к.ф.н. &nbsp;·&nbsp; доцент &nbsp;·&nbsp; 20 лет опыта</p>
+        <p class="hero__price">Онлайн по Skype &mdash; <strong>от 800 ₽</strong></p>
+
+        <div class="hero__actions">
+          <a href="#booking" class="btn btn--primary">Записаться на урок</a>
+          <a href="#trial" class="btn btn--ghost">Пробный урок бесплатно</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint">
+      <span>Листайте вниз</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- AUDIO INTRO -->
+  <section class="audio-section">
+    <div class="container">
+      <p class="audio-label">Послушайте аудио-визитку</p>
+      <div class="audio-player" id="audioPlayer">
+        <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="audio-track">
+          <div class="audio-progress" id="audioProgress"></div>
+        </div>
+        <span class="audio-time" id="audioTime">0:00</span>
+        <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__grid">
+      <div class="about__label-col">
+        <span class="section-label">О преподавателе</span>
+      </div>
+      <div class="about__text-col">
+        <p class="about__lead">
+          Опыт преподавания — 20 лет. Высшее филологическое образование (преподаватель-переводчик в сфере профессиональной коммуникации), кандидат филологических наук, доцент.
+        </p>
+        <p>
+          Обучался у волонтёров фонда Джорджа Сороса (США). Преподавал общий и юридический английский в юридическом вузе. Готовил к ЕГЭ и ОГЭ, а также к англоязычным конкурсам и конференциям.
+        </p>
+        <p>
+          Прошёл ряд курсов повышения квалификации по методике преподавания. Предпочитает коммуникативный подход. Позитивен, терпелив, с юмором.
+        </p>
+        <blockquote class="about__quote">
+          «Неспособных к языкам людей не существует — и я могу это доказать. Приходите, и вы убедитесь, что английский намного проще вашего родного языка.»
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses" id="courses">
+    <div class="container">
+      <span class="section-label section-label--center">Направления</span>
+      <h2 class="section-title">Чему я учу</h2>
+      <div class="courses__grid">
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>Общий английский</h3>
+          <p>Разговорная практика, грамматика, лексика для повседневного общения</p>
+        </div>
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>Бизнес-английский</h3>
+          <p>Деловая переписка, переговоры, презентации и профессиональная лексика</p>
+        </div>
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>Подготовка к экзаменам</h3>
+          <p>TOEFL, IELTS, FCE, CAE — системная подготовка к международным сертификатам</p>
+        </div>
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>ЕГЭ и ОГЭ</h3>
+          <p>Подготовка к государственным экзаменам: стратегия, разбор заданий, тренировки</p>
+        </div>
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>Подготовка к собеседованию</h3>
+          <p>Уверенный английский для интервью: лексика, структура ответов, практика</p>
+        </div>
+        <div class="course-card">
+          <div class="course-card__icon">◈</div>
+          <h3>Юридический английский</h3>
+          <p>Специализированная лексика и тексты для юристов и правоведов</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="price" id="price">
+    <div class="container price__wrap">
+      <span class="section-label section-label--center">Стоимость</span>
+      <div class="price__cards price__cards--packages">
+        <div class="price__card price__card--trial">
+          <p class="price__trial-eyebrow">Начните прямо сейчас</p>
+          <p class="price__tag">Пробный урок</p>
+          <p class="price__amount">Бесплатно</p>
+          <p class="price__desc">60 минут · знакомство · оценка уровня · план обучения</p>
+          <a href="#trial" class="btn btn--primary">Записаться бесплатно</a>
+        </div>
+        <div class="price__card">
+          <p class="price__tag">1 урок</p>
+          <p class="price__amount">800 ₽</p>
+          <p class="price__desc">60 минут · онлайн по Skype</p>
+          <a href="#trial" class="btn btn--primary">Записаться</a>
+        </div>
+        <div class="price__card price__card--accent">
+          <p class="price__badge">⭐ Чаще всего выбирают</p>
+          <p class="price__tag">8 уроков</p>
+          <p class="price__amount">5 440 ₽</p>
+          <p class="price__per">680 ₽/урок · скидка 15%</p>
+          <p class="price__desc">Оплата раз — занимайтесь спокойно</p>
+          <a href="#trial" class="btn btn--primary">Записаться</a>
+        </div>
+        <div class="price__card">
+          <p class="price__tag">4 урока</p>
+          <p class="price__amount">2 880 ₽</p>
+          <p class="price__per">720 ₽/урок · скидка 10%</p>
+          <p class="price__desc">Хороший старт для знакомства с форматом</p>
+          <a href="#trial" class="btn btn--primary">Записаться</a>
+        </div>
+        <div class="price__card">
+          <p class="price__tag">12 уроков</p>
+          <p class="price__amount">7 680 ₽</p>
+          <p class="price__per">640 ₽/урок · скидка 20%</p>
+          <p class="price__desc">Максимальная выгода · заметный прогресс</p>
+          <a href="#trial" class="btn btn--primary">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials" id="credentials">
+    <div class="container">
+      <span class="section-label">Образование и документы</span>
+      <div class="credentials__grid">
+        <div class="credential-item">
+          <div class="credential-item__year">2000</div>
+          <div>
+            <h4>Диплом с отличием</h4>
+            <p>Саратовский государственный университет им. Н.Г. Чернышевского</p>
+            <p class="credential-item__note">Филолог. Преподаватель-переводчик в сфере профессиональной коммуникации</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__year">2005</div>
+          <div>
+            <h4>Кандидат филологических наук</h4>
+            <p>Саратовская государственная академия права</p>
+            <p class="credential-item__note">Диплом № 152861</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__year">2011</div>
+          <div>
+            <h4>Доцент</h4>
+            <p>Приказ Федеральной службы по надзору в сфере образования и науки</p>
+            <p class="credential-item__note">Кафедра английского языка профессиональной и прикладной лингвистики</p>
+          </div>
+        </div>
+        <div class="credential-item">
+          <div class="credential-item__year">+</div>
+          <div>
+            <h4>Повышение квалификации</h4>
+            <p>Курсы фонда Джорджа Сороса (США) · Методика преподавания</p>
+            <p class="credential-item__note">Коммуникативный подход · TOEFL · IELTS · FCE · CAE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIAL BOOKING -->
+  <section class="booking-trial" id="trial">
+    <div class="container booking__wrap">
+      <div class="booking__info">
+        <span class="section-label">Первый шаг</span>
+        <h2 class="section-title">Пробный урок<br/><em>бесплатно</em></h2>
+        <p>Познакомимся, определим ваш уровень, наметим план — и вы поймёте, что цель достижима. Без обязательств.</p>
+        <ul class="booking__perks">
+          <li>60 минут онлайн</li>
+          <li>Оценка уровня английского</li>
+          <li>Индивидуальный план обучения</li>
+          <li>Ответы на все вопросы</li>
+        </ul>
+      </div>
+      <form class="booking-form" id="trialForm" onsubmit="handleForm(event, 'trial')">
+        <h3>Запись на пробный урок</h3>
+        <div class="form-group">
+          <label for="trial-name">Ваше имя</label>
+          <input type="text" id="trial-name" name="name" required placeholder="Иван Иванов" />
+        </div>
+        <div class="form-group">
+          <label for="trial-phone">Телефон или Telegram</label>
+          <input type="text" id="trial-phone" name="contact" required placeholder="+7 900 000-00-00 или @username" />
+        </div>
+        <div class="form-group">
+          <label for="trial-level">Примерный уровень</label>
+          <select id="trial-level" name="level">
+            <option value="">Не знаю</option>
+            <option value="zero">С нуля (A0)</option>
+            <option>Beginner (A1)</option>
+            <option>Elementary (A2)</option>
+            <option>Pre-Intermediate (B1)</option>
+            <option>Intermediate (B2)</option>
+            <option>Upper-Intermediate (C1)</option>
+            <option>Advanced (C2)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="trial-goal">Цель изучения</label>
+          <textarea id="trial-goal" name="goal" rows="3" placeholder="Расскажите, зачем вам английский..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+        <p class="form-note">Я свяжусь с вами в течение 24 часов и согласуем удобное время</p>
+        <p class="form-consent">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html" target="_blank">обработку персональных данных</a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__name">Кирилл Д.</div>
+      <p class="footer__sub">к.ф.н., доцент · Преподаватель английского языка</p>
+      <p class="footer__contact">Онлайн по Skype · от 650 ₽/урок</p>
+    </div>
+  </footer>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal__box">
+      <div class="modal__icon">✓</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Кирилл свяжется с вами в течение 24 часов. До встречи на уроке!</p>
+      <button class="btn btn--primary" onclick="closeModal()">Хорошо</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
