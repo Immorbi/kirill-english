@@ -342,6 +342,12 @@ ul { list-style: none; }
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: stretch;
+}
+.hero__actions .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Scroll hint */
