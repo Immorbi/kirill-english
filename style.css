@@ -587,6 +587,15 @@ ul { list-style: none; }
   background: linear-gradient(135deg, #fffdf7 0%, #fdf6e3 100%);
   position: relative;
   overflow: hidden;
+  animation: trialWiggle 3.5s ease-in-out 2s infinite;
+}
+@keyframes trialWiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  92% { transform: translateY(0) rotate(0deg); }
+  94% { transform: translateY(-3px) rotate(-1deg); }
+  96% { transform: translateY(2px) rotate(1deg); }
+  98% { transform: translateY(-2px) rotate(-0.5deg); }
+  99% { transform: translateY(1px) rotate(0.5deg); }
 }
 .price__card--trial::before {
   content: '';
