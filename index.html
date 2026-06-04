@@ -42,29 +42,25 @@
           <a href="#booking" class="btn btn--primary">Записаться на урок</a>
           <a href="#trial" class="btn btn--ghost">Пробный урок бесплатно</a>
         </div>
+        <div class="hero__audio">
+          <p class="audio-label hero__audio-label">Послушайте аудио-визитку</p>
+          <div class="audio-player" id="audioPlayer">
+            <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="audio-track">
+              <div class="audio-progress" id="audioProgress"></div>
+            </div>
+            <span class="audio-time" id="audioTime">0:00</span>
+            <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="hero__scroll-hint">
       <span>Листайте вниз</span>
       <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- AUDIO INTRO -->
-  <section class="audio-section">
-    <div class="container">
-      <p class="audio-label">Послушайте аудио-визитку</p>
-      <div class="audio-player" id="audioPlayer">
-        <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <div class="audio-track">
-          <div class="audio-progress" id="audioProgress"></div>
-        </div>
-        <span class="audio-time" id="audioTime">0:00</span>
-        <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
-      </div>
     </div>
   </section>
 

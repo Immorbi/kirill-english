@@ -378,17 +378,21 @@ ul { list-style: none; }
 /* ─────────────────────────────
    AUDIO
 ───────────────────────────── */
-.audio-section {
-  background: var(--navy);
-  padding: 2.5rem 0;
-}
 .audio-label {
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.4);
-  text-align: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+.hero__audio {
+  margin-top: 1.8rem;
+}
+.hero__audio-label {
+  text-align: left;
+}
+.hero__audio .audio-player {
+  max-width: 420px;
 }
 .audio-player {
   display: flex;
