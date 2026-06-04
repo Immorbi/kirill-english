@@ -3,10 +3,10 @@
   --navy: #0f1c2e;
   --navy-mid: #1a2d45;
   --navy-light: #243d5c;
-  --gold: #4a90d9;
-  --gold-light: #74aee6;
-  --cream: #f5f0e8;
-  --cream-dark: #ede7d9;
+  --gold: #6bbde8;
+  --gold-light: #92d0f5;
+  --cream: #fdf6e0;
+  --cream-dark: #f7edcc;
   --text: #2a2a2a;
   --text-muted: #6b6b6b;
   --white: #ffffff;
@@ -64,11 +64,12 @@ ul { list-style: none; }
 .btn--ghost {
   background: transparent;
   color: var(--white);
-  border: 1.5px solid rgba(255,255,255,0.4);
+  border: 1.5px solid rgba(255,255,255,0.5);
 }
 .btn--ghost:hover {
   border-color: var(--gold);
-  color: var(--gold);
+  background: rgba(107,189,232,0.1);
+  color: var(--white);
 }
 .btn--dark {
   background: var(--navy);
@@ -232,7 +233,8 @@ ul { list-style: none; }
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
+  padding-left: 1rem;
 }
 
 /* Photo */
