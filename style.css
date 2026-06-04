@@ -568,10 +568,10 @@ ul { list-style: none; }
   flex-direction: column;
   justify-content: center;
 }
-.price__card--accent .price__tag { color: rgba(255,255,255,0.55); }
-.price__card--accent .price__amount { color: var(--gold); }
-.price__card--accent .price__per { color: rgba(255,255,255,0.45); }
-.price__card--accent .price__desc { color: rgba(255,255,255,0.5); }
+.price__card--accent .price__tag { color: rgba(255,255,255,0.6); }
+.price__card--accent .price__amount { color: var(--white); }
+.price__card--accent .price__per { color: rgba(255,255,255,0.6); }
+.price__card--accent .price__desc { color: rgba(255,255,255,0.65); }
 .price__badge {
   display: inline-block;
   background: none;
