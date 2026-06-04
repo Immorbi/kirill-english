@@ -660,8 +660,8 @@ ul { list-style: none; }
 }
 .credential-item {
   display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.6rem;
   padding: 1.8rem 2rem;
   border: 1px solid var(--cream-dark);
   transition: background var(--transition);
@@ -669,13 +669,10 @@ ul { list-style: none; }
 .credential-item:hover { background: var(--cream-dark); }
 .credential-item__year {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--gold);
-  flex-shrink: 0;
-  width: 3.2rem;
-  line-height: 1.1;
-  padding-top: 0.1rem;
+  line-height: 1;
 }
 .credential-item h4 {
   font-family: var(--font-display);
