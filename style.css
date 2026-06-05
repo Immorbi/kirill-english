@@ -830,7 +830,7 @@ ul { list-style: none; }
 .contact-tab.active {
   background: var(--gold);
   border-color: var(--gold);
-  color: var(--navy);
+  color: var(--white);
   font-weight: 500;
 }
 .contact-tab:hover:not(.active) {
