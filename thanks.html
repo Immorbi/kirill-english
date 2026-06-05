@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Заявка отправлена — Кирилл Д.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --navy: #0f1c2e; --gold: #c9a84c; --cream: #f5f0e8; }
+    :root { --navy: #0f172a; --gold: #6366f1; --gold-light: #818cf8; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Jost', sans-serif;
+      font-family: 'Nunito Sans', sans-serif;
       background: var(--navy);
       color: white;
       min-height: 100vh;
@@ -24,38 +24,40 @@
     .icon {
       width: 72px; height: 72px;
       border-radius: 50%;
-      background: var(--gold);
-      color: var(--navy);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: white;
       font-size: 2rem;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 2rem;
+      box-shadow: 0 8px 32px rgba(99,102,241,0.45);
     }
     h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Libre Baskerville', serif;
       font-size: 2.8rem;
-      font-weight: 300;
+      font-weight: 400;
       margin-bottom: 1rem;
-      color: var(--gold);
+      color: white;
     }
     p {
       font-size: 1rem;
       line-height: 1.8;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.6);
       margin-bottom: 2.5rem;
     }
     a {
       display: inline-block;
       background: var(--gold);
-      color: var(--navy);
+      color: white;
       font-size: 0.8rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 0.85rem 2.2rem;
-      border-radius: 4px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: 500;
+      transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
     }
-    a:hover { opacity: 0.88; }
+    a:hover { background: var(--gold-light); box-shadow: 0 8px 24px rgba(99,102,241,0.4); transform: translateY(-2px); }
   </style>
 </head>
 <body>
