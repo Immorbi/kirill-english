@@ -128,3 +128,17 @@ function closeModal() {
 document.getElementById('modal').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
+
+// Убираем висячие предлоги/союзы/частицы
+(function fixOrphans() {
+  const re = /(\s)(а|в|во|и|к|ко|на|не|но|о|об|от|по|под|с|со|у|я|он|из|за|до|при|без|над|для|или|что|как|так|то|же|ли|бы|уж|её|его|их)(\s)/gi;
+  const walk = node => {
+    if (node.nodeType === 3) {
+      node.nodeValue = node.nodeValue.replace(re, (m, b, w) => b + w + ' ');
+    } else if (node.nodeType === 1 && !['SCRIPT','STYLE','INPUT','TEXTAREA'].includes(node.tagName)) {
+      node.childNodes.forEach(walk);
+    }
+  };
+  document.querySelectorAll('p, h1, h2, h3, h4, blockquote, li, .hero__credentials-line, .price__desc, .price__per')
+    .forEach(walk);
+}());
