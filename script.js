@@ -140,8 +140,8 @@ document.getElementById('modal').addEventListener('click', e => {
   const DOT_SPACING = 18;
   const CURSOR_RADIUS = 140;
   const BULGE_STRENGTH = 55;
-  const GRADIENT_FROM = 'rgba(42,158,112,0.45)';
-  const GRADIENT_TO   = 'rgba(52,184,130,0.2)';
+  const GRADIENT_FROM = 'rgba(10,10,10,0.35)';
+  const GRADIENT_TO   = 'rgba(10,10,10,0.1)';
 
   let dots = [];
   let W = 0, H = 0, offX = 0, offY = 0;
