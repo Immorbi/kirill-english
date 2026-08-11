@@ -17,7 +17,7 @@
   --radius-md:    18px;
   --radius-lg:    28px;
   --radius-pill:  999px;
-  --font-head:    'Unbounded', system-ui, sans-serif;
+  --font-head:    'Noto Sans', system-ui, sans-serif;
   --font-script:  'Caveat', cursive;
   --font-body:    'Inter', system-ui, sans-serif;
   --transition:   0.22s cubic-bezier(0.16, 1, 0.3, 1);
