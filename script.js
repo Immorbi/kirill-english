@@ -71,15 +71,15 @@ track.addEventListener('click', e => {
 });
 
 // Scroll reveal
-const revealEls = document.querySelectorAll(
-  '.about__grid, .credential-item, .course-card, .price__card, .booking__info, .booking-form, .audio-section'
-);
-revealEls.forEach(el => el.classList.add('reveal'));
+// Add reveal to legacy selectors not already marked in HTML
+['.about__grid', '.credential-item', '.price__card', '.booking__info', '.booking-form']
+  .forEach(sel => document.querySelectorAll(sel).forEach(el => el.classList.add('reveal')));
 
+// Observe ALL .reveal elements (both HTML-static and just-added above)
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.1 });
-revealEls.forEach(el => observer.observe(el));
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Contact method tabs
 document.querySelectorAll('.contact-tab').forEach(tab => {
