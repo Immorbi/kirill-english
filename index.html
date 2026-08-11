@@ -6,7 +6,7 @@
   <title>Кирилл Д. — Преподаватель английского языка</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,14 +29,15 @@
 
     <div class="hero__content">
       <div class="hero__photo-wrap">
-        <div class="hero__photo-ring"></div>
-        <img class="hero__photo" src="photo.jpg" alt="Кирилл Д." onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
-        <div class="hero__photo-placeholder">КД</div>
+        <div class="hero__photo-inner">
+          <img class="hero__photo" src="photo.jpg" alt="Кирилл Д." onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+          <div class="hero__photo-placeholder">КД</div>
+        </div>
       </div>
       <div class="hero__text">
         <p class="hero__eyebrow">Преподаватель английского языка</p>
         <h1 class="hero__name">Кирилл<br/><em>Данилов</em></h1>
-        <p class="hero__credentials-line">к.ф.н. &nbsp;·&nbsp; доцент &nbsp;·&nbsp; 25 лет опыта</p>
+        <p class="hero__credentials-line">к.ф.н. &nbsp;·&nbsp; доцент &nbsp;·&nbsp; <span class="countup" data-to="25">25</span> лет опыта</p>
 
         <div class="hero__actions">
           <a href="#booking" class="btn btn--primary">Записаться на урок</a>
@@ -63,6 +64,24 @@
       <div class="hero__scroll-line"></div>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track">
+      <span>General English</span><span class="marquee-dot">·</span>
+      <span>Business English</span><span class="marquee-dot">·</span>
+      <span>IELTS &amp; TOEFL</span><span class="marquee-dot">·</span>
+      <span>Legal English</span><span class="marquee-dot">·</span>
+      <span>Job Interview Prep</span><span class="marquee-dot">·</span>
+      <span>ЕГЭ &amp; ОГЭ</span><span class="marquee-dot">·</span>
+      <span>General English</span><span class="marquee-dot">·</span>
+      <span>Business English</span><span class="marquee-dot">·</span>
+      <span>IELTS &amp; TOEFL</span><span class="marquee-dot">·</span>
+      <span>Legal English</span><span class="marquee-dot">·</span>
+      <span>Job Interview Prep</span><span class="marquee-dot">·</span>
+      <span>ЕГЭ &amp; ОГЭ</span><span class="marquee-dot">·</span>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
@@ -293,15 +312,6 @@
   </section>
 
   <!-- FOOTER -->
-  <!-- ALPHABET PHYSICS -->
-  <section class="alphabet-section">
-    <div class="alphabet-section__header">
-      <span class="section-label">Алфавит</span>
-      <h2 class="section-title">Английский — <em>это 26 букв</em></h2>
-    </div>
-    <canvas id="alphabetCanvas"></canvas>
-  </section>
-
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__name">Кирилл Д.</div>
@@ -319,6 +329,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

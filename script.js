@@ -129,7 +129,94 @@ document.getElementById('modal').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
 
-// ── English Alphabet Physics ──
+// ── ClickSpark (from react-bits) ──
+(function() {
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998';
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  const sparks = [];
+  const DURATION = 480, COUNT = 8, RADIUS = 28, SIZE = 9;
+  const COLORS = ['#2a9e70','#34b882','#50c398','#a0dfc8'];
+
+  function resize() {
+    const dpr = devicePixelRatio || 1;
+    canvas.width  = window.innerWidth  * dpr;
+    canvas.height = window.innerHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.addEventListener('click', e => {
+    const now = performance.now();
+    const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    for (let i = 0; i < COUNT; i++) {
+      sparks.push({ x: e.clientX, y: e.clientY, angle: (2 * Math.PI * i) / COUNT, t: now, color });
+    }
+  });
+
+  function draw(ts) {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const s = sparks[i];
+      const el = ts - s.t;
+      if (el > DURATION) { sparks.splice(i, 1); continue; }
+      const p = el / DURATION;
+      const e = p * (2 - p);
+      const dist = e * RADIUS;
+      const len  = SIZE * (1 - e);
+      const x1 = s.x + dist * Math.cos(s.angle);
+      const y1 = s.y + dist * Math.sin(s.angle);
+      const x2 = s.x + (dist + len) * Math.cos(s.angle);
+      const y2 = s.y + (dist + len) * Math.sin(s.angle);
+      ctx.globalAlpha = 1 - p;
+      ctx.strokeStyle = s.color;
+      ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+}());
+
+// ── SpotlightCard hover ──
+document.querySelectorAll('.price__card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+  });
+});
+
+// ── CountUp ──
+(function() {
+  const els = document.querySelectorAll('.countup[data-to]');
+  if (!els.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      obs.unobserve(entry.target);
+      const el = entry.target;
+      const to = +el.dataset.to;
+      const from = 0;
+      const dur = 1800;
+      const start = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(from + (to - from) * ease);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = to;
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.5 });
+  els.forEach(el => obs.observe(el));
+}());
+
+// ── (removed: English Alphabet Physics) ──
 (function() {
   const canvas = document.getElementById('alphabetCanvas');
   if (!canvas) return;
