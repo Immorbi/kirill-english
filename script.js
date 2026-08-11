@@ -129,6 +129,146 @@ document.getElementById('modal').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
 
+// ── English Alphabet Physics ──
+(function() {
+  const canvas = document.getElementById('alphabetCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const GRAVITY = 0.25;
+  const DAMPING = 0.72;
+  const FRICTION = 0.988;
+
+  const PALETTE = [
+    '#c8ede0','#b4e6d4','#a0dfc8','#8cd8bc',
+    '#78d1b0','#64caa4','#50c398','#3cbc8c',
+    '#2ab580','#2a9e70','#258e64','#1f7e58',
+  ];
+
+  let balls = [], mouse = { x: -9999, y: -9999 }, W = 0, H = 420;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    const newW = rect.width || canvas.parentElement.offsetWidth || window.innerWidth;
+    if (newW === 0) return;
+    W = newW;
+    const dpr = devicePixelRatio || 1;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function spawn() {
+    const R = Math.min(W / 10, H / 6, 32);
+    balls = LETTERS.map((letter, i) => ({
+      letter, r: R,
+      x: R + Math.random() * (W - R * 2),
+      y: R + Math.random() * H * 0.5,
+      vx: (Math.random() - 0.5) * 3,
+      vy: Math.random() * 2,
+      color: PALETTE[i % PALETTE.length],
+    }));
+  }
+
+  function collide(a, b) {
+    const dx = b.x - a.x, dy = b.y - a.y;
+    const d = Math.hypot(dx, dy);
+    const min = a.r + b.r;
+    if (d >= min || d < 0.01) return;
+    const nx = dx / d, ny = dy / d;
+    const ov = (min - d) * 0.5;
+    a.x -= nx * ov; a.y -= ny * ov;
+    b.x += nx * ov; b.y += ny * ov;
+    const dvx = a.vx - b.vx, dvy = a.vy - b.vy;
+    const dot = dvx * nx + dvy * ny;
+    if (dot > 0) return;
+    const imp = dot * 0.88;
+    a.vx -= imp * nx; a.vy -= imp * ny;
+    b.vx += imp * nx; b.vy += imp * ny;
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    for (const b of balls) {
+      // mouse repulsion
+      const mdx = b.x - mouse.x, mdy = b.y - mouse.y;
+      const md = Math.hypot(mdx, mdy);
+      if (md < 110 && md > 1) {
+        const f = ((110 - md) / 110) * 7;
+        b.vx += (mdx / md) * f;
+        b.vy += (mdy / md) * f;
+      }
+      b.vy += GRAVITY;
+      b.vx *= FRICTION; b.vy *= FRICTION;
+      const spd = Math.hypot(b.vx, b.vy);
+      if (spd > 18) { b.vx = b.vx / spd * 18; b.vy = b.vy / spd * 18; }
+      b.x += b.vx; b.y += b.vy;
+      if (b.x - b.r < 0)  { b.x = b.r;     b.vx =  Math.abs(b.vx) * DAMPING; }
+      if (b.x + b.r > W)  { b.x = W - b.r;  b.vx = -Math.abs(b.vx) * DAMPING; }
+      if (b.y - b.r < 0)  { b.y = b.r;     b.vy =  Math.abs(b.vy) * DAMPING; }
+      if (b.y + b.r > H)  { b.y = H - b.r;  b.vy = -Math.abs(b.vy) * DAMPING; }
+    }
+    for (let i = 0; i < balls.length; i++)
+      for (let j = i + 1; j < balls.length; j++)
+        collide(balls[i], balls[j]);
+
+    for (const b of balls) {
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fillStyle = b.color;
+      ctx.fill();
+      ctx.font = `700 ${b.r * 0.72}px 'Libre Baskerville', Georgia, serif`;
+      ctx.fillStyle = '#0d0e18';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(b.letter, b.x, b.y + b.r * 0.05);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  canvas.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  canvas.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+  canvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.touches[0].clientX - r.left; mouse.y = e.touches[0].clientY - r.top;
+  }, { passive: false });
+  canvas.addEventListener('touchend', () => { mouse.x = -9999; mouse.y = -9999; });
+  // Shake on click
+  canvas.addEventListener('click', () => {
+    balls.forEach(b => { b.vx += (Math.random() - 0.5) * 12; b.vy -= Math.random() * 8; });
+  });
+
+  let inited = false;
+  function init() {
+    if (inited) return;
+    const dpr = devicePixelRatio || 1;
+    W = canvas.offsetWidth || canvas.parentElement.offsetWidth || window.innerWidth - 32;
+    H = 420;
+    if (W <= 0) return;
+    inited = true;
+    canvas.width  = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    spawn();
+  }
+
+  window.addEventListener('resize', () => {
+    inited = false;
+    init();
+  });
+
+  // Try at different times to guarantee layout is ready
+  setTimeout(init, 0);
+  setTimeout(init, 100);
+  setTimeout(init, 400);
+  window.addEventListener('load', init);
+  tick();
+}());
+
 // Убираем висячие предлоги/союзы/частицы
 (function fixOrphans() {
   const re = /(\s)(а|в|во|и|к|ко|на|не|но|о|об|от|по|под|с|со|у|я|он|из|за|до|при|без|над|для|или|что|как|так|то|же|ли|бы|уж|её|его|их)(\s)/gi;
