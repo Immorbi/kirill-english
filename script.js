@@ -101,7 +101,7 @@ if (reveals.length) {
   window.addEventListener('resize', resize);
 
   const sparks = [];
-  const COLORS = ['#F7E84A','#FF4F8B','#FFE8F2','#ffffff','#F7E84A'];
+  const COLORS = ['#EDE5D8','#B87054','#F0E6DC','#ffffff','#D9CEBC'];
   document.addEventListener('click', e => {
     for (let i = 0; i < 8; i++) {
       const angle = (i / 8) * Math.PI * 2;
