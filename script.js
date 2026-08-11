@@ -129,6 +129,113 @@ document.getElementById('modal').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
 
+// ── DotField hero background (ported from react-bits) ──
+(function() {
+  const canvas = document.querySelector('.hero__dots');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d', { alpha: true });
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  const DOT_R = 1.2;
+  const DOT_SPACING = 18;
+  const CURSOR_RADIUS = 140;
+  const BULGE_STRENGTH = 55;
+  const GRADIENT_FROM = 'rgba(42,158,112,0.45)';
+  const GRADIENT_TO   = 'rgba(52,184,130,0.2)';
+
+  let dots = [];
+  let W = 0, H = 0, offX = 0, offY = 0;
+  let mouse = { x: -9999, y: -9999, prevX: -9999, prevY: -9999, speed: 0 };
+  let engagement = 0, frameCount = 0;
+
+  function resize() {
+    const hero = canvas.parentElement;
+    const rect = hero.getBoundingClientRect();
+    W = rect.width; H = rect.height;
+    offX = rect.left + window.scrollX;
+    offY = rect.top  + window.scrollY;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    buildDots();
+  }
+
+  function buildDots() {
+    const step = DOT_R + DOT_SPACING;
+    const cols = Math.floor(W / step);
+    const rows = Math.floor(H / step);
+    const padX = (W % step) / 2;
+    const padY = (H % step) / 2;
+    dots = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const ax = padX + c * step + step / 2;
+        const ay = padY + r * step + step / 2;
+        dots.push({ ax, ay, sx: ax, sy: ay });
+      }
+    }
+  }
+
+  setInterval(() => {
+    const dx = mouse.prevX - mouse.x, dy = mouse.prevY - mouse.y;
+    const dist = Math.hypot(dx, dy);
+    mouse.speed += (dist - mouse.speed) * 0.5;
+    if (mouse.speed < 0.001) mouse.speed = 0;
+    mouse.prevX = mouse.x; mouse.prevY = mouse.y;
+  }, 20);
+
+  window.addEventListener('mousemove', e => {
+    mouse.x = e.pageX - offX;
+    mouse.y = e.pageY - offY;
+  }, { passive: true });
+
+  window.addEventListener('resize', () => setTimeout(resize, 100));
+
+  function tick() {
+    frameCount++;
+    const target = Math.min(mouse.speed / 5, 1);
+    engagement += (target - engagement) * 0.06;
+    if (engagement < 0.001) engagement = 0;
+    const eng = engagement;
+
+    ctx.clearRect(0, 0, W, H);
+
+    const grad = ctx.createLinearGradient(0, 0, W, H);
+    grad.addColorStop(0, GRADIENT_FROM);
+    grad.addColorStop(1, GRADIENT_TO);
+    ctx.fillStyle = grad;
+
+    const crSq = CURSOR_RADIUS * CURSOR_RADIUS;
+    const rad = DOT_R / 2;
+
+    ctx.beginPath();
+    for (const d of dots) {
+      const dx = mouse.x - d.ax, dy = mouse.y - d.ay;
+      const distSq = dx * dx + dy * dy;
+      if (distSq < crSq && eng > 0.01) {
+        const dist = Math.sqrt(distSq);
+        const t = 1 - dist / CURSOR_RADIUS;
+        const push = t * t * BULGE_STRENGTH * eng;
+        const angle = Math.atan2(dy, dx);
+        d.sx += (d.ax - Math.cos(angle) * push - d.sx) * 0.15;
+        d.sy += (d.ay - Math.sin(angle) * push - d.sy) * 0.15;
+      } else {
+        d.sx += (d.ax - d.sx) * 0.1;
+        d.sy += (d.ay - d.sy) * 0.1;
+      }
+      ctx.moveTo(d.sx + rad, d.sy);
+      ctx.arc(d.sx, d.sy, rad, 0, Math.PI * 2);
+    }
+    ctx.fill();
+    requestAnimationFrame(tick);
+  }
+
+  resize();
+  tick();
+}());
+
 // ── ClickSpark (from react-bits) ──
 (function() {
   const canvas = document.createElement('canvas');
