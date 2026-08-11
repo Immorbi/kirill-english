@@ -9,7 +9,7 @@
   --stone:        #E8E2D8;
   --ink:          #1E1C1A;
   --ink-mid:      #4A4642;
-  --ink-muted:    #7A7470;
+  --ink-muted:    #5C5856;
   --ink-faint:    #AAA6A2;
   --bg:           #F5F2ED;
   --white:        #ffffff;
@@ -20,8 +20,7 @@
   --radius-lg:    28px;
   --radius-pill:  999px;
   --font-head:    'Noto Sans', system-ui, sans-serif;
-  --font-script:  'Caveat', cursive;
-  --font-body:    'Inter', system-ui, sans-serif;
+  --font-body:    'Source Serif 4', Georgia, serif;
   --transition:   0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -98,6 +97,7 @@ ul  { list-style: none; }
   color: var(--ink);
   margin-bottom: 2.5rem;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 .heading-icon {
   font-family: sans-serif;
@@ -228,6 +228,7 @@ ul  { list-style: none; }
   letter-spacing: -0.03em;
   color: var(--ink);
   margin-bottom: 1.5rem;
+  text-wrap: balance;
 }
 .hero__heading em {
   font-style: normal;
