@@ -3,348 +3,292 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Кирилл Д. — Преподаватель английского языка</title>
+  <title>Кирилл Данилов — Преподаватель английского языка</title>
+  <meta name="description" content="Кандидат филологических наук, доцент. 25 лет опыта. IELTS, деловой английский, с нуля до C2." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cakra&family=Nebulas+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Caveat:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__bg"></div>
-    <canvas class="hero__dots" aria-hidden="true"></canvas>
-    <nav class="nav">
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <div class="nav__links">
+      <a href="#about">Обо мне</a>
+      <a href="#courses">Каталог</a>
+      <a href="#price">Цены</a>
+    </div>
+    <a href="#booking" class="btn btn--nav">Оставить заявку</a>
+    <button class="nav__burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <a href="#about" class="nav__mobile-link">Обо мне</a>
+    <a href="#courses" class="nav__mobile-link">Каталог</a>
+    <a href="#price" class="nav__mobile-link">Цены</a>
+    <a href="#booking" class="nav__mobile-link nav__mobile-cta">Записаться</a>
+  </div>
+</nav>
 
-      <ul class="nav__links">
-        <li><a href="#about">О преподавателе</a></li>
-        <li><a href="#courses">Направления</a></li>
-        <li><a href="#credentials">Документы</a></li>
-        <li><a href="#booking" class="nav__cta">Записаться</a></li>
-      </ul>
-      <button class="nav__burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero__inner">
 
-    <div class="hero__content">
-      <div class="hero__left">
-        <span class="hero__tag">Преподаватель английского языка</span>
-        <h1 class="hero__name">Кирилл<br/><em>Данилов</em></h1>
-        <p class="hero__desc">Кандидат филологических наук, доцент. Помогаю достичь уверенного владения языком — от нуля до C2, подготовки к IELTS и делового общения.</p>
-        <div class="hero__actions">
-          <a href="#booking" class="btn btn--primary">Записаться на урок</a>
-          <a href="#trial" class="btn btn--ghost">Пробный урок бесплатно</a>
-        </div>
-        <div class="hero__proof">
-          <div class="hero__proof-item">
-            <span class="hero__proof-num"><span class="countup" data-to="25">25</span></span>
-            <span class="hero__proof-label">лет опыта</span>
-          </div>
-          <div class="hero__proof-div"></div>
-          <div class="hero__proof-item">
-            <span class="hero__proof-num">к.ф.н.</span>
-            <span class="hero__proof-label">доцент</span>
-          </div>
-          <div class="hero__proof-div"></div>
-          <div class="hero__proof-item">
-            <span class="hero__proof-num">200+</span>
-            <span class="hero__proof-label">учеников</span>
-          </div>
-        </div>
-        <div class="hero__audio">
-          <p class="audio-label">Послушайте аудио-визитку</p>
-          <div class="audio-player" id="audioPlayer">
-            <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            <div class="audio-track">
-              <div class="audio-progress" id="audioProgress"></div>
-            </div>
-            <span class="audio-time" id="audioTime">0:00</span>
-            <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
-          </div>
-        </div>
-      </div>
-      <div class="hero__right">
-        <div class="hero__photo-card">
-          <img class="hero__photo" src="photo.jpg" alt="Кирилл Данилов" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
-          <div class="hero__photo-placeholder">КД</div>
+    <div class="hero__left">
+      <h1 class="hero__heading">Английский,<br>который<br><em>работает</em><br>на вас</h1>
+      <p class="hero__sub">Начните уже сегодня —<br><span class="hero__sub-mark">первый урок бесплатно!</span></p>
+      <a href="#booking" class="btn btn--pink hero__cta">Записаться на пробный урок</a>
+      <div class="hero__audio">
+        <p class="audio-label">Аудио-визитка</p>
+        <div class="audio-player" id="audioPlayer">
+          <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="audio-track"><div class="audio-progress" id="audioProgress"></div></div>
+          <span class="audio-time" id="audioTime">0:00</span>
+          <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
         </div>
       </div>
     </div>
 
-    <div class="hero__scroll-hint">
-      <span>Листайте вниз</span>
-      <div class="hero__scroll-line"></div>
+    <div class="hero__right">
+      <div class="hero__photo-wrap">
+        <img class="hero__photo" src="photo.jpg" alt="Кирилл Данилов"
+          onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+        <div class="hero__photo-placeholder">КД</div>
+      </div>
     </div>
-  </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-band">
-    <div class="marquee-track">
-      <span>General English</span><span class="marquee-dot">·</span>
-      <span>Business English</span><span class="marquee-dot">·</span>
-      <span>IELTS &amp; TOEFL</span><span class="marquee-dot">·</span>
-      <span>Legal English</span><span class="marquee-dot">·</span>
-      <span>Job Interview Prep</span><span class="marquee-dot">·</span>
-      <span>ЕГЭ &amp; ОГЭ</span><span class="marquee-dot">·</span>
-      <span>General English</span><span class="marquee-dot">·</span>
-      <span>Business English</span><span class="marquee-dot">·</span>
-      <span>IELTS &amp; TOEFL</span><span class="marquee-dot">·</span>
-      <span>Legal English</span><span class="marquee-dot">·</span>
-      <span>Job Interview Prep</span><span class="marquee-dot">·</span>
-      <span>ЕГЭ &amp; ОГЭ</span><span class="marquee-dot">·</span>
-    </div>
   </div>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="container about__grid">
-      <div class="about__label-col">
-        <span class="section-label">О преподавателе</span>
-      </div>
-      <div class="about__text-col">
-        <p class="about__lead">
-          25 лет в преподавании английского языка. Кандидат филологических наук, доцент, дипломированный преподаватель-переводчик в сфере профессиональной коммуникации.
-        </p>
-        <p>
-          Преподавал общий и юридический английский в высшей школе, готовил студентов и школьников к ЕГЭ, ОГЭ, международным экзаменам и конкурсам. Прошёл обучение у специалистов из США, регулярно повышает квалификацию по современным методикам преподавания.
-        </p>
-        <p>
-          В работе делает ставку на коммуникативный подход: минимум скучной теории, максимум живого языка. Умеет найти подход к любому студенту — терпелив, внимателен и не без чувства юмора.
-        </p>
-        <blockquote class="about__quote">
-          «Людей, неспособных к языкам, не существует. Английский проще, чем кажется — и я готов это доказать на первом же уроке.»
-        </blockquote>
+  <div class="hero__chips">
+    <div class="chip chip--dark">Индивидуальные<br>и групповые занятия</div>
+    <div class="chip chip--white">25 лет опыта<br>преподавания</div>
+    <div class="chip chip--white">Для учёбы, карьеры,<br>путешествий и бизнеса</div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about__inner">
+
+    <div class="about__left">
+      <h2 class="section-heading">ОБО МНЕ</h2>
+      <p class="about__lead">25 лет в преподавании английского языка. Кандидат филологических наук, доцент, дипломированный преподаватель-переводчик в сфере профессиональной коммуникации.</p>
+      <p class="about__text">Преподавал общий и юридический английский в высшей школе, готовил студентов и школьников к ЕГЭ, ОГЭ, международным экзаменам и конкурсам. Прошёл обучение у специалистов из США, регулярно повышает квалификацию по современным методикам преподавания.</p>
+      <blockquote class="about__quote">«Язык — это не набор правил, а живой инструмент. Моя задача — сделать так, чтобы английский заработал именно для вас.»</blockquote>
+    </div>
+
+    <div class="about__right">
+      <div class="about__photo-wrap">
+        <img class="about__photo" src="photo.jpg" alt="Кирилл Данилов"
+          onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+        <div class="about__photo-placeholder">КД</div>
+        <span class="about__hi">hi!</span>
       </div>
     </div>
-  </section>
 
-  <!-- COURSES -->
-  <section class="courses" id="courses">
-    <div class="container">
-      <h2 class="section-title reveal">Чему я учу</h2>
-      <div class="courses__list">
-        <div class="course-row reveal" style="--i:0">
-          <span class="course-num">01</span>
-          <div class="course-row__body">
-            <h3>Общий английский</h3>
-            <p>Разговорная практика, грамматика, лексика для повседневного общения</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="course-row reveal" style="--i:1">
-          <span class="course-num">02</span>
-          <div class="course-row__body">
-            <h3>Бизнес-английский</h3>
-            <p>Деловая переписка, переговоры, презентации и профессиональная лексика</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="course-row reveal" style="--i:2">
-          <span class="course-num">03</span>
-          <div class="course-row__body">
-            <h3>Подготовка к экзаменам</h3>
-            <p>TOEFL, IELTS, FCE, CAE — системная подготовка к международным сертификатам</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="course-row reveal" style="--i:3">
-          <span class="course-num">04</span>
-          <div class="course-row__body">
-            <h3>ЕГЭ и ОГЭ</h3>
-            <p>Подготовка к государственным экзаменам: стратегия, разбор заданий, тренировки</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="course-row reveal" style="--i:4">
-          <span class="course-num">05</span>
-          <div class="course-row__body">
-            <h3>Подготовка к собеседованию</h3>
-            <p>Уверенный английский для интервью: лексика, структура ответов, практика</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-        <div class="course-row reveal" style="--i:5">
-          <span class="course-num">06</span>
-          <div class="course-row__body">
-            <h3>Юридический английский</h3>
-            <p>Специализированная лексика и тексты для юристов и правоведов</p>
-          </div>
-          <svg class="course-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
+  </div>
+</section>
+
+<!-- ── COURSES ── -->
+<section class="courses" id="courses">
+  <div class="container">
+    <h2 class="section-heading">МОИ<br>СПЕЦИАЛИЗАЦИИ</h2>
+
+    <div class="courses__bento">
+      <div class="course-card course-card--lg">
+        <span class="course-card__num">01</span>
+        <h3>Общий английский</h3>
+        <p>От нуля до C2. Говорение, грамматика, лексика — системно и без зубрёжки.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-card__num">02</span>
+        <h3>Подготовка к IELTS и TOEFL</h3>
+        <p>Стратегии, разбор формата, практика всех навыков. Выход на целевой балл.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-card__num">03</span>
+        <h3>Деловой английский</h3>
+        <p>Переговоры, переписка, презентации. Профессиональный English для работы.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-card__num">04</span>
+        <h3>Юридический английский</h3>
+        <p>Legal English для юристов, нотариусов и студентов-правоведов.</p>
+      </div>
+      <div class="course-card">
+        <span class="course-card__num">05</span>
+        <h3>ЕГЭ и ОГЭ</h3>
+        <p>Подготовка к государственным экзаменам. Высокий балл — реальная цель.</p>
+      </div>
+      <div class="course-card course-card--accent">
+        <span class="course-card__num">06</span>
+        <h3>Разговорный клуб <span class="course-badge">идёт запись</span></h3>
+        <p>Мини-группы для тех, кто хочет говорить без страха и стеснения.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PRICE -->
-  <section class="price" id="price">
-    <div class="container price__wrap">
-      <span class="section-label section-label--center">Стоимость</span>
-      <div class="price__cards price__cards--packages">
-        <div class="price__card price__card--trial">
-          <p class="price__trial-eyebrow">Начните прямо сейчас</p>
-          <p class="price__tag">Пробный урок</p>
-          <p class="price__amount">Бесплатно</p>
-          <p class="price__desc">45 минут · знакомство · оценка уровня · план обучения</p>
-          <a href="#trial" class="btn btn--primary">Записаться</a>
-        </div>
-        <div class="price__card">
-          <p class="price__tag">1 урок</p>
-          <p class="price__amount">1 000 ₽</p>
-          <p class="price__convert">≈ €10 · ₾30</p>
-          <p class="price__desc">50 минут · онлайн</p>
-          <a href="#trial" class="btn btn--primary">Записаться</a>
-        </div>
-        <div class="price__card price__card--accent">
-          <p class="price__badge">Чаще всего выбирают</p>
-          <p class="price__tag">8 уроков</p>
-          <p class="price__amount">6 800 ₽</p>
-          <p class="price__convert price__convert--light">≈ €68 · ₾204</p>
-          <p class="price__per">850 ₽/урок · скидка 15%</p>
-          <p class="price__desc">Оплата раз — занимайтесь спокойно</p>
-          <a href="#trial" class="btn btn--primary">Записаться</a>
-        </div>
-        <div class="price__card">
-          <p class="price__tag">4 урока</p>
-          <p class="price__amount">3 600 ₽</p>
-          <p class="price__convert">≈ €36 · ₾108</p>
-          <p class="price__per">900 ₽/урок · скидка 10%</p>
-          <p class="price__desc">Хороший старт для знакомства с форматом</p>
-          <a href="#trial" class="btn btn--primary">Записаться</a>
-        </div>
-        <div class="price__card">
-          <p class="price__tag">12 уроков</p>
-          <p class="price__amount">9 600 ₽</p>
-          <p class="price__convert">≈ €96 · ₾288</p>
-          <p class="price__per">800 ₽/урок · скидка 20%</p>
-          <p class="price__desc">Максимальная выгода · заметный прогресс</p>
-          <a href="#trial" class="btn btn--primary">Записаться</a>
-        </div>
+<!-- ── WHY ── -->
+<section class="why">
+  <div class="container">
+    <div class="why__header">
+      <h2 class="section-heading">ПОЧЕМУ<br>ВЫБИРАЮТ <span class="heading-underline">МЕНЯ</span></h2>
+      <div class="why__header-photo">
+        <img src="photo.jpg" alt="" aria-hidden="true"
+          onerror="this.style.background='var(--yellow-light)'; this.style.display='block'" />
       </div>
     </div>
-  </section>
 
-  <!-- CREDENTIALS -->
-  <section class="credentials" id="credentials">
-    <div class="container">
-      <span class="section-label">Образование и документы</span>
-      <div class="credentials__grid">
-        <div class="credential-item">
-          <div class="credential-item__year">2000</div>
-          <div>
-            <h4>Диплом с отличием</h4>
-            <p>Саратовский государственный университет им. Н.Г. Чернышевского</p>
-            <p class="credential-item__note">Филолог. Преподаватель-переводчик в сфере профессиональной коммуникации</p>
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="credential-item__year">2005</div>
-          <div>
-            <h4>Кандидат филологических наук</h4>
-            <p>Саратовская государственная академия права</p>
-            <p class="credential-item__note">Диплом № 152861</p>
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="credential-item__year">2011</div>
-          <div>
-            <h4>Доцент</h4>
-            <p>Приказ Федеральной службы по надзору в сфере образования и науки</p>
-            <p class="credential-item__note">Кафедра английского языка профессиональной и прикладной лингвистики</p>
-          </div>
-        </div>
-        <div class="credential-item">
-          <div class="credential-item__year">+</div>
-          <div>
-            <h4>Повышение квалификации</h4>
-            <p>Курсы фонда Джорджа Сороса (США) · Методика преподавания</p>
-            <p class="credential-item__note">Коммуникативный подход · TOEFL · IELTS · FCE · CAE</p>
-          </div>
-        </div>
+    <div class="why__bento">
+      <div class="why-card">
+        <span class="why-card__num">(1)</span>
+        <p>Индивидуальный подход — никакой «одной программы для всех»</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card__num">(2)</span>
+        <p>Объясняю просто и с примерами из жизни</p>
+      </div>
+      <div class="why-card why-card--photo">
+        <img src="photo.jpg" alt="" aria-hidden="true"
+          onerror="this.style.background='var(--yellow-light)'" />
+      </div>
+      <div class="why-card">
+        <span class="why-card__num">(3)</span>
+        <p>Работаю по современным методикам (CLIL, Communicative Approach)</p>
+      </div>
+      <div class="why-card why-card--yellow">
+        <span class="why-card__num">(4)</span>
+        <p>Все материалы включены — ничего не нужно покупать</p>
+      </div>
+      <div class="why-card">
+        <span class="why-card__num">(5)</span>
+        <p>Удобное расписание — утро, день, вечер</p>
+      </div>
+      <div class="why-card why-card--photo why-card--photo2">
+        <img src="photo.jpg" alt="" aria-hidden="true"
+          onerror="this.style.background='var(--pink-light)'" />
+      </div>
+      <div class="why-card">
+        <span class="why-card__num">(6)</span>
+        <p>Занятия онлайн в Zoom / Google Meet</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRIAL BOOKING -->
-  <section class="booking-trial" id="trial">
-    <div class="container booking__wrap">
-      <div class="booking__info">
-        <span class="section-label">Первый шаг</span>
-        <h2 class="section-title">Пробный урок<br/><em>бесплатно</em></h2>
-        <p>Познакомимся, определим ваш уровень, наметим план — и вы поймёте, что цель достижима. Без обязательств.</p>
+<!-- ── PRICE ── -->
+<section class="price" id="price">
+  <div class="container">
+    <h2 class="section-heading">СТОИМОСТЬ<br>ЗАНЯТИЙ</h2>
+
+    <div class="price__grid">
+      <div class="price-card">
+        <div class="price-card__label">Разовый урок</div>
+        <div class="price-card__amount">1 000 ₽</div>
+        <div class="price-card__convert">≈ 10 € / 27 ₾</div>
+        <div class="price-card__per">60 минут</div>
+        <p class="price-card__desc">Подходит для знакомства или разовой задачи</p>
+        <a href="#booking" class="btn btn--outline">Записаться</a>
+      </div>
+      <div class="price-card price-card--featured">
+        <div class="price-card__badge">Популярный</div>
+        <div class="price-card__label">Пакет 8 уроков</div>
+        <div class="price-card__amount">18 000 ₽</div>
+        <div class="price-card__per">2 250 ₽/урок · экономия 10%</div>
+        <p class="price-card__desc">Оптимальный темп для уверенного прогресса</p>
+        <a href="#booking" class="btn btn--pink">Выбрать пакет</a>
+      </div>
+      <div class="price-card">
+        <div class="price-card__label">Пакет 20 уроков</div>
+        <div class="price-card__amount">40 000 ₽</div>
+        <div class="price-card__per">2 000 ₽/урок · экономия 20%</div>
+        <p class="price-card__desc">Максимальный результат при интенсивной работе</p>
+        <a href="#booking" class="btn btn--outline">Записаться</a>
+      </div>
+    </div>
+
+    <div class="price__trial">
+      <span>Первый пробный урок — <strong>бесплатно</strong>. Познакомимся, определим цель и составим план.</span>
+      <a href="#booking" class="btn btn--pink">Записаться на пробный</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ── -->
+<section class="booking" id="booking">
+  <div class="container">
+    <div class="booking__inner">
+      <div class="booking__left">
+        <h2 class="section-heading">ЗАПИШИТЕСЬ<br>НА УРОК</h2>
+        <p class="booking__sub">Оставьте заявку — Кирилл свяжется с вами в течение 24 часов и подберёт удобное время.</p>
         <ul class="booking__perks">
-          <li>45 минут онлайн</li>
-          <li>Оценка уровня английского</li>
-          <li>Индивидуальный план обучения</li>
-          <li>Ответы на все вопросы</li>
+          <li>Пробный урок бесплатно</li>
+          <li>Диагностика уровня</li>
+          <li>Индивидуальная программа</li>
         </ul>
       </div>
-      <form class="booking-form" id="trialForm" action="https://formsubmit.co/kirilldanilov060@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Новая заявка на пробный урок" />
-        <input type="hidden" name="_next" value="https://immorbi.github.io/kirill-english/thanks.html" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_template" value="box" />
-        <h3>Запись на пробный урок</h3>
+
+      <form class="booking__form" id="bookingForm">
+        <h3>Оставить заявку</h3>
         <div class="form-group">
-          <label for="trial-name">Ваше имя</label>
-          <input type="text" id="trial-name" name="name" required placeholder="Иван Иванов" />
+          <label for="fname">Ваше имя</label>
+          <input id="fname" type="text" placeholder="Иван Иванов" required />
         </div>
         <div class="form-group">
           <label>Способ связи</label>
           <div class="contact-tabs">
-            <button type="button" class="contact-tab active" data-target="contact-tg">Telegram</button>
-            <button type="button" class="contact-tab" data-target="contact-vk">ВКонтакте</button>
-            <button type="button" class="contact-tab" data-target="contact-phone">Email</button>
+            <button type="button" class="contact-tab active" data-channel="telegram">Telegram</button>
+            <button type="button" class="contact-tab" data-channel="vk">ВКонтакте</button>
+            <button type="button" class="contact-tab" data-channel="email">Email</button>
           </div>
-          <input type="text" id="contact-tg" name="contact" required placeholder="@username" />
-          <input type="text" id="contact-vk" name="contact" placeholder="vk.com/username" style="display:none" disabled />
-          <input type="email" id="contact-phone" name="contact" placeholder="example@mail.ru" style="display:none" disabled />
+          <input id="fcontact" type="text" placeholder="@username" required />
         </div>
         <div class="form-group">
-          <label for="trial-level">Примерный уровень</label>
-          <select id="trial-level" name="level">
-            <option value="">Не знаю</option>
-            <option value="zero">С нуля (A0)</option>
-            <option>Beginner (A1)</option>
-            <option>Elementary (A2)</option>
-            <option>Pre-Intermediate (B1)</option>
-            <option>Intermediate (B2)</option>
-            <option>Upper-Intermediate (C1)</option>
-            <option>Advanced (C2)</option>
+          <label for="flevel">Примерный уровень</label>
+          <select id="flevel">
+            <option>Не знаю</option>
+            <option>Начинающий (A1–A2)</option>
+            <option>Средний (B1–B2)</option>
+            <option>Продвинутый (C1–C2)</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="trial-goal">Цель изучения</label>
-          <textarea id="trial-goal" name="goal" rows="3" placeholder="Расскажите, зачем вам английский..."></textarea>
+          <label for="fgoal">Цель изучения</label>
+          <textarea id="fgoal" rows="3" placeholder="Расскажите, зачем вам английский..."></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
-        <p class="form-note">Кирилл свяжется с вами в течение 24 часов</p>
-        <p class="form-consent">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html" target="_blank">обработку персональных данных</a></p>
+        <button type="submit" class="btn btn--pink btn--full">Отправить заявку</button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на <a href="#">обработку персональных данных</a></p>
       </form>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__name">Кирилл Д.</div>
-      <p class="footer__sub">к.ф.н., доцент · Преподаватель английского языка</p>
-    </div>
-  </footer>
-
-  <!-- SUCCESS MODAL -->
-  <div class="modal" id="modal">
-    <div class="modal__box">
-      <div class="modal__icon">✓</div>
-      <h3>Заявка отправлена!</h3>
-      <p>Кирилл свяжется с вами в течение 24 часов. До встречи на уроке!</p>
-      <button class="btn btn--primary" onclick="closeModal()">Хорошо</button>
-    </div>
   </div>
+</section>
 
-  <script src="script.js?v=4"></script>
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="footer__name">Кирилл Данилов</div>
+      <div class="footer__sub">к.ф.н., доцент · Преподаватель английского языка</div>
+    </div>
+    <div class="footer__copy">© 2025</div>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal__box">
+    <div class="modal__icon">ok</div>
+    <h3>Заявка отправлена!</h3>
+    <p>Кирилл свяжется с вами в течение 24 часов.</p>
+    <button class="btn btn--pink btn--full" onclick="document.getElementById('modal').classList.remove('open')">Отлично!</button>
+  </div>
+</div>
+
+<script src="script.js?v=10"></script>
 </body>
 </html>
