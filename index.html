@@ -6,7 +6,7 @@
   <title>Кирилл Д. — Преподаватель английского языка</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cakra&family=Nebulas+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,20 +29,29 @@
     </nav>
 
     <div class="hero__content">
-      <div class="hero__photo-wrap">
-        <div class="hero__photo-inner">
-          <img class="hero__photo" src="photo.jpg" alt="Кирилл Д." onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
-          <div class="hero__photo-placeholder">КД</div>
-        </div>
-      </div>
-      <div class="hero__text">
-        <p class="hero__eyebrow">Преподаватель английского языка</p>
+      <div class="hero__left">
+        <span class="hero__tag">Преподаватель английского языка</span>
         <h1 class="hero__name">Кирилл<br/><em>Данилов</em></h1>
-        <p class="hero__credentials-line">к.ф.н. &nbsp;·&nbsp; доцент &nbsp;·&nbsp; <span class="countup" data-to="25">25</span> лет опыта</p>
-
+        <p class="hero__desc">Кандидат филологических наук, доцент. Помогаю достичь уверенного владения языком — от нуля до C2, подготовки к IELTS и делового общения.</p>
         <div class="hero__actions">
           <a href="#booking" class="btn btn--primary">Записаться на урок</a>
           <a href="#trial" class="btn btn--ghost">Пробный урок бесплатно</a>
+        </div>
+        <div class="hero__proof">
+          <div class="hero__proof-item">
+            <span class="hero__proof-num"><span class="countup" data-to="25">25</span></span>
+            <span class="hero__proof-label">лет опыта</span>
+          </div>
+          <div class="hero__proof-div"></div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-num">к.ф.н.</span>
+            <span class="hero__proof-label">доцент</span>
+          </div>
+          <div class="hero__proof-div"></div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-num">200+</span>
+            <span class="hero__proof-label">учеников</span>
+          </div>
         </div>
         <div class="hero__audio">
           <p class="audio-label">Послушайте аудио-визитку</p>
@@ -56,6 +65,12 @@
             <span class="audio-time" id="audioTime">0:00</span>
             <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
           </div>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="hero__photo-card">
+          <img class="hero__photo" src="photo.jpg" alt="Кирилл Данилов" onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+          <div class="hero__photo-placeholder">КД</div>
         </div>
       </div>
     </div>
