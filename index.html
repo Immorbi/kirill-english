@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body>
 
@@ -40,16 +40,18 @@
     <div class="hero__left">
       <h1 class="hero__heading">Английский,<br>который<br><em>работает</em><br>на вас</h1>
       <p class="hero__sub">Начните уже сегодня:<br><span class="hero__sub-mark">первый урок бесплатно!</span></p>
-      <a href="#booking" class="btn btn--pink hero__cta">Записаться на пробный урок</a>
-      <div class="hero__audio">
-        <p class="audio-label">Аудио-визитка</p>
-        <div class="audio-player" id="audioPlayer">
-          <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <div class="audio-track"><div class="audio-progress" id="audioProgress"></div></div>
-          <span class="audio-time" id="audioTime">0:00</span>
-          <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
+      <div class="hero__actions">
+        <a href="#booking" class="btn btn--pink hero__cta">Записаться на пробный урок</a>
+        <div class="hero__audio">
+          <p class="audio-label">Аудио-визитка</p>
+          <div class="audio-player" id="audioPlayer">
+            <button class="audio-btn" id="playBtn" aria-label="Воспроизвести">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div class="audio-track"><div class="audio-progress" id="audioProgress"></div></div>
+            <span class="audio-time" id="audioTime">0:00</span>
+            <audio id="audioEl" src="intro.mp3" preload="metadata"></audio>
+          </div>
         </div>
       </div>
     </div>
@@ -252,6 +254,6 @@
   </div>
 </div>
 
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
 </body>
 </html>

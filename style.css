@@ -237,15 +237,6 @@ ul  { list-style: none; }
   text-decoration-color: var(--accent);
   text-underline-offset: 3px;
 }
-.hero__cta {
-  font-size: 1rem;
-  padding: 1.1rem 2.2rem;
-  margin-bottom: 2.2rem;
-}
-.hero__audio {
-  display: inline-flex;
-  flex-direction: column;
-}
 .audio-label {
   font-size: 0.68rem;
   letter-spacing: 0.1em;
@@ -295,6 +286,32 @@ ul  { list-style: none; }
   color: var(--ink-muted);
   min-width: 2rem;
   font-variant-numeric: tabular-nums;
+}
+
+.hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.hero__cta {
+  font-size: 1rem;
+  padding: 1.1rem 2.2rem;
+}
+
+.hero__audio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .hero__right {
