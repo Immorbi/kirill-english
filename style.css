@@ -377,11 +377,14 @@ ul  { list-style: none; }
   mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
   -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
 }
-.hero__skyline svg {
+.hero__skyline img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
   display: block;
-  fill: currentColor;
+  filter: brightness(0) invert(1);
+  opacity: 0.18;
 }
 .hero {
   position: relative;
