@@ -581,8 +581,7 @@ ul  { list-style: none; }
 }
 .price-card .btn {
   align-self: flex-start;
-  margin-top: auto;
-  padding-top: 1.2rem;
+  margin-top: 1.2rem;
 }
 .price-card--featured {
   background: var(--dark);
