@@ -365,6 +365,32 @@ ul  { list-style: none; }
 .hero__photo-wrap.no-photo .hero__photo-placeholder { display: flex; }
 
 /* Chips row */
+.hero__skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  color: rgba(255,255,255,0.14);
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 0%, black 40%, transparent 100%);
+}
+.hero__skyline svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: currentColor;
+}
+.hero {
+  position: relative;
+}
+.hero__inner, .hero__chips {
+  position: relative;
+  z-index: 1;
+}
+
 .hero__chips {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
