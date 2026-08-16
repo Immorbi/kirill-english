@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=24" />
+  <link rel="stylesheet" href="style.css?v=25" />
 </head>
 <body>
 
@@ -97,7 +97,7 @@
     <div class="courses__bento">
       <div class="course-card course-card--lg">
         <h3>Общий английский</h3>
-        <p>От нуля до C1. Говорение, грамматика, лексика — системно, без зубрёжки.</p>
+        <p>Разговариваем с первого урока. Грамматика и лексика — в контексте живой речи.</p>
       </div>
       <div class="course-card">
         <h3>Подготовка к IELTS и TOEFL</h3>
@@ -231,7 +231,7 @@
           <textarea id="fgoal" rows="3" placeholder="Расскажите, зачем вам английский..."></textarea>
         </div>
         <button type="submit" class="btn btn--pink btn--full">Отправить заявку</button>
-        <p class="form-note">Нажимая кнопку, вы соглашаетесь на <a href="#">обработку персональных данных</a></p>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на <a href="privacy.html">обработку персональных данных</a> и с условиями <a href="offer.html">публичной оферты</a></p>
       </form>
     </div>
   </div>
@@ -244,7 +244,11 @@
       <div class="footer__name">Кирилл Данилов</div>
       <div class="footer__sub">к.ф.н., доцент · Преподаватель английского языка</div>
     </div>
-    <div class="footer__copy">© 2025</div>
+    <div class="footer__links">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="offer.html">Публичная оферта</a>
+      <span class="footer__copy">© 2025</span>
+    </div>
   </div>
 </footer>
 
@@ -257,6 +261,13 @@
   </div>
 </div>
 
+<!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Сайт использует технические cookie для работы. <a href="privacy.html">Подробнее</a></p>
+  <button class="btn btn--pink cookie-banner__btn" onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookie_ok','1')">Понятно</button>
+</div>
+
 <script src="script.js?v=14"></script>
+<script>if(localStorage.getItem('cookie_ok'))document.getElementById('cookieBanner').style.display='none';</script>
 </body>
 </html>
