@@ -91,7 +91,7 @@ ul  { list-style: none; }
   padding: 0.6rem 1.3rem;
 }
 .btn--nav:hover {
-  background: var(--ink-mid);
+  background: var(--accent);
   transform: translateY(-1px);
 }
 .btn--full { width: 100%; justify-content: center; }
