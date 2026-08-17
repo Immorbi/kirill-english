@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=25" />
+  <link rel="stylesheet" href="style.css?v=26" />
 </head>
 <body>
 
@@ -95,27 +95,27 @@
     <h2 class="section-heading">МОИ<br>СПЕЦИАЛИЗАЦИИ</h2>
 
     <div class="courses__bento">
-      <div class="course-card course-card--lg">
+      <div class="course-card course-card--lg reveal" style="--i:0">
         <h3>Общий английский</h3>
         <p>Разговариваем с первого урока. Грамматика и лексика — в контексте живой речи.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card reveal" style="--i:1">
         <h3>Подготовка к IELTS и TOEFL</h3>
         <p>Стратегии, разбор формата, практика всех навыков. Выход на целевой балл.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card reveal" style="--i:2">
         <h3>Деловой английский</h3>
         <p>Переговоры, переписка, презентации. Профессиональный English для работы.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card reveal" style="--i:3">
         <h3>Юридический английский</h3>
         <p>Legal English для юристов, нотариусов и студентов-правоведов.</p>
       </div>
-      <div class="course-card">
+      <div class="course-card reveal" style="--i:4">
         <h3>ЕГЭ и ОГЭ</h3>
         <p>Подготовка к государственным экзаменам. Высокий балл: реальная цель.</p>
       </div>
-      <div class="course-card course-card--accent">
+      <div class="course-card course-card--accent reveal" style="--i:5">
         <h3>Разговорный клуб <span class="course-badge">идёт запись</span></h3>
         <p>Мини-группы для тех, кто хочет говорить без страха и стеснения.</p>
       </div>
@@ -129,22 +129,22 @@
     <h2 class="section-heading">ПОЧЕМУ<br>ВЫБИРАЮТ <span class="heading-underline">МЕНЯ</span></h2>
 
     <div class="why__bento">
-      <div class="why-card">
+      <div class="why-card reveal" style="--i:0">
         <p>Индивидуальный подход: никакой шаблонной программы</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="--i:1">
         <p>Объясняю просто и с примерами из жизни</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="--i:2">
         <p>Работаю по коммуникативной методике — говорим с первого урока</p>
       </div>
-      <div class="why-card why-card--accent">
+      <div class="why-card why-card--accent reveal" style="--i:3">
         <p>Все материалы включены. Ничего не нужно докупать.</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="--i:4">
         <p>Удобное расписание: утро, день, вечер</p>
       </div>
-      <div class="why-card">
+      <div class="why-card reveal" style="--i:5">
         <p>Занятия онлайн в Zoom / Google Meet</p>
       </div>
     </div>
@@ -157,14 +157,14 @@
     <h2 class="section-heading">СТОИМОСТЬ<br>ЗАНЯТИЙ</h2>
 
     <div class="price__grid">
-      <div class="price-card">
+      <div class="price-card reveal" style="--i:0">
         <div class="price-card__label">Разовый урок</div>
         <div class="price-card__amount">1 000 ₽</div>
         <div class="price-card__convert">≈ 10 € / 30 ₾</div>
         <div class="price-card__per">50 минут</div>
         <p class="price-card__desc">Разовое занятие по конкретной теме или задаче</p>
       </div>
-      <div class="price-card price-card--featured">
+      <div class="price-card price-card--featured reveal" style="--i:1">
         <div class="price-card__badge">Популярный</div>
         <div class="price-card__label">Пакет 5 уроков</div>
         <div class="price-card__amount">4 500 ₽</div>
@@ -172,7 +172,7 @@
         <div class="price-card__per">900 ₽/урок · экономия 10%</div>
         <p class="price-card__desc">Оптимальный темп для уверенного прогресса</p>
       </div>
-      <div class="price-card">
+      <div class="price-card reveal" style="--i:2">
         <div class="price-card__label">Пакет 10 уроков</div>
         <div class="price-card__amount">8 500 ₽</div>
         <div class="price-card__convert">≈ 85 € / 255 ₾</div>
@@ -267,7 +267,7 @@
   <button class="btn btn--pink cookie-banner__btn" onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookie_ok','1')">Понятно</button>
 </div>
 
-<script src="script.js?v=14"></script>
+<script src="script.js?v=15"></script>
 <script>if(localStorage.getItem('cookie_ok'))document.getElementById('cookieBanner').style.display='none';</script>
 </body>
 </html>
