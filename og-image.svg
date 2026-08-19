@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1A3560"/>
+      <stop offset="100%" stop-color="#0D1B3E"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#E74C3C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+  <!-- Red accent bar -->
+  <rect x="80" y="80" width="6" height="120" rx="3" fill="url(#accent-grad)"/>
+
+  <!-- Name -->
+  <text x="112" y="138" font-family="'Noto Sans', system-ui, sans-serif" font-size="56" font-weight="900" fill="#ffffff" letter-spacing="-1">Кирилл Данилов</text>
+
+  <!-- Subtitle -->
+  <text x="112" y="182" font-family="'Noto Sans', system-ui, sans-serif" font-size="24" font-weight="400" fill="rgba(255,255,255,0.55)" letter-spacing="0">Преподаватель английского языка</text>
+
+  <!-- Divider -->
+  <line x1="112" y1="228" x2="680" y2="228" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+  <!-- Pills / chips -->
+  <!-- Chip 1 -->
+  <rect x="112" y="258" width="200" height="52" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="212" y="289" font-family="'Noto Sans', system-ui, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">25 лет опыта</text>
+
+  <!-- Chip 2 -->
+  <rect x="326" y="258" width="178" height="52" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="415" y="289" font-family="'Noto Sans', system-ui, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">к.ф.н., доцент</text>
+
+  <!-- Chip 3 -->
+  <rect x="518" y="258" width="186" height="52" rx="26" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="611" y="289" font-family="'Noto Sans', system-ui, sans-serif" font-size="17" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">Онлайн-занятия</text>
+
+  <!-- Tagline -->
+  <text x="112" y="390" font-family="'Noto Sans', system-ui, sans-serif" font-size="32" font-weight="700" fill="#ffffff">Английский,</text>
+  <text x="112" y="432" font-family="'Noto Sans', system-ui, sans-serif" font-size="32" font-weight="700" fill="#ffffff">который </text>
+  <text x="290" y="432" font-family="'Noto Sans', system-ui, sans-serif" font-size="32" font-weight="700" fill="#FF6B5B">работает</text>
+  <text x="490" y="432" font-family="'Noto Sans', system-ui, sans-serif" font-size="32" font-weight="700" fill="#ffffff"> на вас</text>
+
+  <!-- First lesson free badge -->
+  <rect x="112" y="468" width="296" height="48" rx="24" fill="url(#accent-grad)"/>
+  <text x="260" y="498" font-family="'Noto Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Первый урок бесплатно</text>
+
+  <!-- Domain -->
+  <text x="1120" y="570" font-family="'Noto Sans', system-ui, sans-serif" font-size="20" font-weight="500" fill="rgba(255,255,255,0.35)" text-anchor="end">kirilldanilov.online</text>
+
+  <!-- Decorative circles -->
+  <circle cx="980" cy="200" r="180" fill="rgba(192,57,43,0.06)"/>
+  <circle cx="1050" cy="180" r="100" fill="rgba(46,64,128,0.3)"/>
+  <circle cx="920" cy="420" r="120" fill="rgba(255,255,255,0.03)"/>
+</svg>
