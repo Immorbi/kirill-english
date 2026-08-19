@@ -32,14 +32,43 @@ document.querySelectorAll('.contact-tab').forEach(tab => {
   });
 });
 
-// Booking form
+// Booking form → Telegram
+const BOT_TOKEN = '8844562688:AAGOQDX5AUDAtWPKGeKileZNubD7POkVQFI';
+const CHAT_ID   = '565627845';
+
 const form = document.getElementById('bookingForm');
 const modal = document.getElementById('modal');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    modal.classList.add('open');
-    form.reset();
+    const name    = document.getElementById('fname').value.trim();
+    const contact = document.getElementById('fcontact').value.trim();
+    const level   = document.getElementById('flevel').value;
+    const goal    = document.getElementById('fgoal').value.trim();
+    const channel = (document.querySelector('.contact-tab.active') || {}).dataset?.channel || '';
+
+    const text = `📩 *Новая заявка с сайта*\n\n👤 Имя: ${name}\n📱 ${channel ? channel.charAt(0).toUpperCase()+channel.slice(1)+': ' : ''}${contact}\n🎯 Уровень: ${level}\n💬 Цель: ${goal || '—'}`;
+
+    const btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Отправка…';
+
+    try {
+      const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'Markdown' })
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.description);
+      modal.classList.add('open');
+      form.reset();
+    } catch (err) {
+      alert('Ошибка отправки. Пожалуйста, напишите напрямую: @danilovenglish');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Отправить заявку';
+    }
   });
 }
 
