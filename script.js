@@ -73,7 +73,8 @@ if (form) {
     const goal    = document.getElementById('fgoal').value.trim();
     const channel = (document.querySelector('.contact-tab.active') || {}).dataset?.channel || '';
 
-    const text = `📩 *Новая заявка с сайта*\n\n👤 Имя: ${name}\n📱 ${channel ? channel.charAt(0).toUpperCase()+channel.slice(1)+': ' : ''}${contact}\n🎯 Уровень: ${level}\n💬 Цель: ${goal || '—'}`;
+    const ch = channel ? channel.charAt(0).toUpperCase()+channel.slice(1)+': ' : '';
+    const text = `📩 Новая заявка с сайта\n\n👤 Имя: ${name}\n📱 ${ch}${contact}\n🎯 Уровень: ${level}\n💬 Цель: ${goal || '—'}`;
 
     const btn = form.querySelector('[type="submit"]');
     btn.disabled = true;
@@ -83,7 +84,7 @@ if (form) {
       const res = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: 'Markdown' })
+        body: JSON.stringify({ chat_id: CHAT_ID, text })
       });
       const data = await res.json();
       if (!data.ok) throw new Error(data.description);
