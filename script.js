@@ -21,6 +21,32 @@ navMobile.querySelectorAll('a').forEach(a => {
   });
 });
 
+// Duration tabs
+const PRICES = {
+  45: {
+    single: { rub: '900 ₽',   conv: '≈ $10 / 10 € / 27 ₾',  per: '45 минут' },
+    five:   { rub: '4 050 ₽', conv: '≈ $45 / 45 € / 120 ₾', per: '810 ₽/урок · экономия 10%' },
+    ten:    { rub: '7 650 ₽', conv: '≈ $85 / 85 € / 230 ₾', per: '765 ₽/урок · экономия 15%' },
+  },
+  60: {
+    single: { rub: '1 200 ₽',  conv: '≈ $13 / 13 € / 36 ₾',  per: '60 минут' },
+    five:   { rub: '5 400 ₽',  conv: '≈ $60 / 60 € / 160 ₾', per: '1 080 ₽/урок · экономия 10%' },
+    ten:    { rub: '10 200 ₽', conv: '≈ $113 / 113 € / 305 ₾',per: '1 020 ₽/урок · экономия 15%' },
+  }
+};
+document.querySelectorAll('.duration-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.duration-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const p = PRICES[tab.dataset.dur];
+    ['single','five','ten'].forEach(k => {
+      document.getElementById('p-'+k).textContent = p[k].rub;
+      document.getElementById('c-'+k).textContent = p[k].conv;
+      document.getElementById('d-'+k).textContent = p[k].per;
+    });
+  });
+});
+
 // Contact tabs
 document.querySelectorAll('.contact-tab').forEach(tab => {
   tab.addEventListener('click', () => {

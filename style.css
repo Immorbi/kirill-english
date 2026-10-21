@@ -602,7 +602,11 @@ ul  { list-style: none; }
   padding: 8rem 0;
   border-top: 1px solid var(--border);
 }
-.price .section-heading { margin-bottom: 3rem; }
+.price .section-heading { margin-bottom: 2rem; }
+.duration-tabs { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; }
+.duration-tab { padding: 0.45rem 1.2rem; border-radius: var(--radius-pill); border: 1.5px solid var(--border); background: transparent; font-family: var(--font-head); font-size: 0.9rem; font-weight: 600; color: var(--ink-muted); cursor: pointer; transition: var(--transition); }
+.duration-tab:hover { border-color: var(--accent); color: var(--accent); }
+.duration-tab.active { background: var(--accent); border-color: var(--accent); color: var(--white); }
 .price__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
