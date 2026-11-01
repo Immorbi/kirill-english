@@ -472,9 +472,12 @@ ul  { list-style: none; }
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
-  object-position: 50% 30%;
+  object-position: 50% 20%;
   border-radius: var(--radius-lg);
   background: var(--warm-dark);
+}
+.about__photo:nth-child(2) {
+  object-position: 50% 35%;
 }
 .about__lead {
   font-size: 1.1rem;
@@ -1016,7 +1019,7 @@ ul  { list-style: none; }
   .hero__sub { max-width: 42ch; }
 
   .about__inner { grid-template-columns: 1fr; gap: 2rem; }
-  .about__photos { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .about__photos { gap: 0.5rem; }
   .about__photo { aspect-ratio: 4/5; }
   .about__inner .section-heading { margin-bottom: 1.2rem; }
 
