@@ -224,11 +224,11 @@ ul  { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.22;
+  opacity: 0.25;
   pointer-events: none;
   z-index: 0;
+  clip-path: inset(0);
 }
-.hero__inner, .hero__skyline, .hero__chips { position: relative; z-index: 1; }
 .hero .hero__heading,
 .hero .hero__sub { color: var(--white); }
 .hero .hero__sub { color: rgba(255,255,255,0.75); }
@@ -402,9 +402,6 @@ ul  { list-style: none; }
   display: block;
   filter: brightness(0) invert(1);
   opacity: 0.18;
-}
-.hero {
-  position: relative;
 }
 .hero__inner, .hero__chips {
   position: relative;
